@@ -3,6 +3,8 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+
     -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
@@ -24,3 +26,8 @@ cmp.setup({
         ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
     })
 })
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
+-- Show line diagnostics automatically in hover window
