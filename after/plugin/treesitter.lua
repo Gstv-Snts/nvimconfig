@@ -26,4 +26,5 @@ require 'nvim-treesitter.configs'.setup {
     playground = { enable = true}
 }
 require 'nvim-ts-autotag'.setup {}
-vim.cmd("colorscheme kanagawa")
+vim.cmd([[colorscheme everforest]])
+
