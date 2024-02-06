@@ -14,12 +14,21 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "clangd",
         "lua_ls",
-        "tsserver"
+        "tsserver",
     },
     handlers = {
         lsp_zero.default_setup,
     },
 })
+
+require 'lspconfig'.terraformls.setup {}
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.tf", "*.tfvars" },
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
+
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<Tab>'] = cmp_action.luasnip_supertab(),
@@ -27,7 +36,7 @@ cmp.setup({
     })
 })
 vim.diagnostic.config({
-  virtual_text = true,
+    virtual_text = true,
 })
 
 -- Show line diagnostics automatically in hover window

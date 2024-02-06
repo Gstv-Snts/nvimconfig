@@ -1,5 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -8,13 +6,6 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -22,8 +13,10 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
+    use 'nvim-treesitter/playground'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
+    use { 'projekt0n/github-nvim-theme' }
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -115,5 +108,7 @@ return require('packer').startup(function(use)
             }
         },
     }
-    use {'nvim-tree/nvim-web-devicons'}
+    use { 'nvim-tree/nvim-web-devicons' }
+    use { 'hashivim/vim-terraform' }
+    use { 'rebelot/kanagawa.nvim' }
 end)
