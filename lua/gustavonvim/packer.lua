@@ -109,7 +109,7 @@ return require('packer').startup(function(use)
         },
     }
     use { 'nvim-tree/nvim-web-devicons' }
-    use { 'hashivim/vim-terraform' }
+    use { 'hashivim/vim-terraform'}
     use({
         "neanias/everforest-nvim",
         -- Optional; default configuration will be used if setup isn't called.
