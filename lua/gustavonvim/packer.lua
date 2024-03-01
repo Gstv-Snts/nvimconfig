@@ -44,7 +44,10 @@ return require('packer').startup(function(use)
     }
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'L3MON4D3/LuaSnip' }
+    use { 'L3MON4D3/LuaSnip',
+        history = true,
+        region_check_events = "InsertEnter",
+        delete_check_events = "TextChanged,InsertLeave" }
     use { 'saadparwaiz1/cmp_luasnip' }
     use { "rafamadriz/friendly-snippets" }
     use {
@@ -109,7 +112,7 @@ return require('packer').startup(function(use)
         },
     }
     use { 'nvim-tree/nvim-web-devicons' }
-    use { 'hashivim/vim-terraform'}
+    use { 'hashivim/vim-terraform' }
     use({
         "neanias/everforest-nvim",
         -- Optional; default configuration will be used if setup isn't called.
