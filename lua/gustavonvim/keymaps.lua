@@ -4,6 +4,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", function()
     vim.cmd(":LspZeroFormat")
     vim.cmd(":update")
+    vim.cmd(":terminal leptosfmt .")
 end)
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
