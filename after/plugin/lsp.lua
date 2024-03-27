@@ -34,6 +34,9 @@ require('lspconfig').rust_analyzer.setup {
                     },
                 },
             },
+            cargo = {
+                features = { "ssr" } -- features = ssr, for LSP support in leptos SSR functions
+            }
         },
     }
 }
